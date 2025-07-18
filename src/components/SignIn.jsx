@@ -1,5 +1,4 @@
-import { GoogleAuthProvider, signInWithRedirect } from 'firebase/auth'
-import React from 'react'
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import GoogleButton from 'react-google-button'
 
 import { auth } from '../firebase'
@@ -10,9 +9,13 @@ const style = {
     signin: `flex justify-center`
 }
 
-const googleSignIn = () => {
+const googleSignIn = async () => {
     const provider = new GoogleAuthProvider();
-    signInWithRedirect(auth, provider);
+    try {
+        await signInWithPopup(auth, provider);
+    } catch (error) {
+        console.error("Sign-in error:", error);
+    }
 }
 
 const SignIn = () => {
