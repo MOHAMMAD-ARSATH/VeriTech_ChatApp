@@ -1,5 +1,3 @@
-import React from "react";
-
 import { auth } from "../firebase";
 
 const style = {
@@ -26,7 +24,6 @@ const Message = ({ message, prevMessageDate }) => {
     ? `${style.timestamp} text-white`
     : style.timestamp;
 
-  // Convert timestamp object to string
   const messageDate =
     message.timestamp && message.timestamp.toDate().toDateString();
   const messageTime =
@@ -35,7 +32,6 @@ const Message = ({ message, prevMessageDate }) => {
       .toDate()
       .toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 
-  // Determine whether to show the date based on the comparison with the previous message's date
   const showDate = messageDate !== prevMessageDate;
 
   return (
