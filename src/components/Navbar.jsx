@@ -1,11 +1,11 @@
-import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 import { auth } from "../firebase";
 import LogOut from "./LogOut";
 
 const style = {
-  nav: `bg-gray-800 h-20 flex justify-between items-center p-4`,
+  //nav: `bg-gray-800 h-20 flex justify-between items-center p-4`,
+  nav: `bg-gray-800 h-20 flex justify-between items-center p-4 shadow-md`,
   heading: `text-white text-3xl font-semibold tracking-wide uppercase italic`,
 };
 
